@@ -1,0 +1,142 @@
+<html>
+<head>
+	<title>Demo Book Website</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" />
+	<script type="text/javascript" src="http://cf.cdn.inmobi.com/ad/inmobi.js"></script>
+	<style type="text/css">
+		@media (min-width: 80.5em){
+			#header{
+				font-size:100px;
+			}
+		}
+
+		@media (max-width: 40.5em) {
+			#header {
+				font-size:25px;
+			}
+			.products {
+				border:1px solid black;
+				border-top:0px;
+				list-style-type:none;
+				padding:0px;
+			}
+			.products li{
+				border:1px solid #333;
+				border-width:1px 0 0 0;
+				margin:0px;
+				padding:10px;
+			}
+			.products li img{
+				width:6em;
+				margin:0em 1em 1em 0em;
+				float:left;
+			}
+			.products li a{
+				text-decoration:none;
+			}	
+			.products li h3{
+				margin:0px;
+				color:#353;
+			}
+			.product li p{
+				margin:0px;
+				padding:0px;
+			}
+		}
+
+		body{
+			color:#222;
+		}
+
+		#header{
+			color:#333;
+		}
+		
+	</style>
+	<script>
+		var inmobi_conf={
+			siteid:"YOUR_SITE_ID_HERE",
+			onSuccess:function(ad,div){
+				div.getElementsByTagName("img")[0].setAttribute("src",ad.icon.url);
+				div.getElementsByTagName("h3")[0].innerHTML=(ad.title);
+				div.getElementsByTagName("h3")[0].onclick=ad.reportAndHandleAdClick;
+				div.getElementsByTagName("p")[0].innerHTML=(ad.description+"<br/>This is a sponsored ad");
+				div.style.display="";
+			},onError:function(code,div){
+				console.log(code);
+			}
+		};
+		var inmobi_conf2={
+			siteid:"YOUR_SITE_ID_HERE",
+			onSuccess:function(ad,div){
+				div.getElementsByTagName("img")[0].setAttribute("src",ad.icon.url);
+				div.getElementsByTagName("h3")[0].innerHTML=(ad.title);
+				div.getElementsByTagName("h3")[0].onclick=ad.reportAndHandleAdClick;
+				div.getElementsByTagName("p")[0].innerHTML=ad.description;
+				div.style.display="";
+			},onError:function(code,div){
+				console.log(code);
+			}
+		};
+		window.onload=function(){
+			var adli=document.getElementById("nativeAd");
+			_inmobi.getNativeAd(adli,inmobi_conf);
+			var adli2=document.getElementById("nativeAd2");
+			_inmobi.getNativeAd(adli2,inmobi_conf2);
+		}
+	</script>
+</head>
+<body>	
+	<span id="overlay"></span>
+	<h1 id="header">InMobi Native Sample Page</h1>
+	<ul class="products">
+		<li id="product1">
+			<img src="images/a.png" />
+			<a href="http://inmobi.com"><h3>Lorem Ipsum</h3></a>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+			</p>
+		</li>
+		<li>
+			<img src="images/b.png" />
+			<a href="http://inmobi.com"><h3>Ipsum Lorem</h3></a>
+			<p>
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+			</p>
+		</li>
+		<li id="nativeAd" style="display:none;">
+			<img src="" />
+			<h3></h3>
+			<p>
+			</p>
+		</li>
+		<li>
+			<img src="images/c.png" />
+			<a href="http://inmobi.com"><h3>Neque Porro</h3></a>
+			<p>
+				Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+			</p>
+		</li>
+		<li>
+			<img src="images/d.png" />
+			<a href="http://inmobi.com"><h3>Vero accusamus</h3></a>
+			<p>
+				At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+			</p>
+		</li>
+		<li id="product5">
+			<img src="images/e.png" />
+			<a href="http://inmobi.com"><h3>Et Harum</h3></a>
+			<p>
+				Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+			</p>
+		</li>
+		<li id="nativeAd2" style="display:none;">
+			<img src="" />
+			<h3></h3>
+			<p>
+			</p>
+		</li>
+	</ul>
+</body>
+</html>
