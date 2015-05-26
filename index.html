@@ -59,7 +59,7 @@
 			onSuccess:function(ad,div){
 				div.getElementsByTagName("img")[0].setAttribute("src",ad.icon.url);
 				div.getElementsByTagName("h3")[0].innerHTML=(ad.title);
-				div.getElementsByTagName("h3")[0].onclick=ad.reportAndHandleAdClick;
+				div.onclick=ad.reportAndHandleAdClick;
 				div.getElementsByTagName("p")[0].innerHTML=(ad.description+"<br/>This is a sponsored ad");
 				div.style.display="";
 			},onError:function(code,div){
@@ -71,7 +71,7 @@
 			onSuccess:function(ad,div){
 				div.getElementsByTagName("img")[0].setAttribute("src",ad.icon.url);
 				div.getElementsByTagName("h3")[0].innerHTML=(ad.title);
-				div.getElementsByTagName("h3")[0].onclick=ad.reportAndHandleAdClick;
+				div.onclick=ad.reportAndHandleAdClick;
 				div.getElementsByTagName("p")[0].innerHTML=ad.description;
 				div.style.display="";
 			},onError:function(code,div){
